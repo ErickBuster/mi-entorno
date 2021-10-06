@@ -180,6 +180,7 @@ cp -r $HOME/Descargas/entorno/archivosConfiguracion/misScripts/Ports /opt
 
 echo "ENLAZANDO ARCHIVOS .ZSHRC Y CONFIG DE BASH A .ZSH"
 sleep 3
+cp $HOME/Descargas/entorno/archivosConfiguracion/.zshrc $HOME/
 	#Enlazando archivos 
 cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /root/
 sudo  ln -s -f $HOME/.zshrc /root/.zshrc
