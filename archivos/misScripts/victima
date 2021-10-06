@@ -1,0 +1,15 @@
+#nombre e ip victima
+ function victima(){
+         echo $1 > .temp
+         ip_victima=$(cat .temp | awk -F ' ' '{print $1}')
+         name_victima=$(cat .temp | awk -F ' ' '{print $2}')
+         recv=$(ping $ip_victima -c 1 | grep "received" |awk '{print $4}')
+         ttl_victima=$(ping $ip_victima -c 1 | grep "ttl" | awk '{print $6}' | awk -F '=' '{print $2}')
+         if [ $recv -ne 1 ]; then
+                 echo "Error -> ip $ip_victima invalida"
+                 clearv
+         else
+                 echo "$ttl_victima $ip_victima $name_victima" > /home/erickbuster/.config/bin/target
+         fi
+         rm .temp
+ }

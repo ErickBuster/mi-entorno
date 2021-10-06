@@ -1,0 +1,3 @@
+ function mkdirt(){
+         mkdir nmap exploits content scripts
+ }
