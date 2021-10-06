@@ -21,9 +21,9 @@ sudo apt install firejail -y
 echo "DESCARGANDO HACK NERD FONTS"
 sleep 5
 #Instalando Hack Nerd Fonts para la terminal
-cp $HOME/Descargas/entorno/archivosConfiguracion/Fonts/Hack.zip /usr/local/share/fonts
-unzip /usr/local/share/fonts/Hack.zip
-rm /usr/local/share/fonts/Hack.zip
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/Fonts/Hack.zip /usr/local/share/fonts
+sudo unzip /usr/local/share/fonts/Hack.zip
+sudo rm /usr/local/share/fonts/Hack.zip
 	#Entrar a la configuracion de la terminal y el Tipografia elegir Hack Nerd Font Mono Regular
 
 #instalamos Foxy Proxy Manualmente
