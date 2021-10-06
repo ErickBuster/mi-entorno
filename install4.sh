@@ -1,42 +1,27 @@
 #!/bin/bash
 
-echo "CONFIGURANDO POLYBAR"
-sleep 5
-#Configurando las barras de la Polybar y anadiendo mis scripts personalizados
-cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/current.ini $HOME/.config/polybar
-cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/launch.sh $HOME/.config/polybar
-cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/workspace.ini $HOME/.config/polybar
-cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/scripts/powermenu_alt $HOME/.config/polybar/scripts
-cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/scripts/themes/powermenu_alt.rasi $HOME/.config/polybar/scripts/themes
-
-chmod +x $HOME/.config/polybar/launch.sh
-chmod +x $HOME/.config/polybar/scripts/powermenu_alt
-
-cp -r $HOME/Descargas/entorno/archivosConfiguracion/bin $HOME/.config/
-chmod +x $HOME/.config/bin/ethernet_status.sh
-chmod +x $HOME/.config/bin/hackthebox_status.sh
-chmod +x $HOME/.config/bin/victim_status.sh
-
 echo "CONFIGURANDO TRANSPARENCIA PICOM"
 sleep 5
 #Instalando la transparencia
-mkdir $HOME/.config/picom
-cp $HOME/Descargas/entorno/archivosConfiguracion/picom/* $HOME/.config/picom
+
+mkdir ~/.config/picom
+cd ~/.config/picom
+cp $HOME/Descargas/entorno/blue-sky/picom.conf .
 
 #Configuracion de bordeados y seguimiendo del raton
 	#Descomentar si el archivo $HOME/.config/bspwm/bspwmrc no contiene el codigo siguiente
 	#Antes de recargar la configuración, hacemos un seguimiento del ratón para saber en qué ventana estamos con la siguiente instrucción en el 'bspwm':
-#echo "bspc config focus_follows_pointer true" >> $HOME/.config/bspwm/bspwmrc
+echo "bspc config focus_follows_pointer true" >> $HOME/.config/bspwm/bspwmrc
 
 	#Posteriormente, ejecutamos los siguientes comandos para aplicar los bordeados:
-#echo 'picom --experimental-backends &' >> $HOME/.config/bspwm/bspwmrc
-#echo 'bspc config border_width 0' >> $HOME/.config/bspwm/bspwmrc
+echo 'picom --experimental-backends &' >> $HOME/.config/bspwm/bspwmrc
+echo 'bspc config border_width 0' >> $HOME/.config/bspwm/bspwmrc
 
 echo "CONFIGURANDO ROFI"
 sleep 5
 #Configuracion del rofi
-cp -r $HOME/Descargas/entorno/archivosConfiguracion/rofi $HOME/.config/
-  #NOTA: editar el usario del archivo ~/.config/rofi/config en la linea 1
+mkdir -p ~/.config/rofi/themes
+cp ~/Descargas/entorno/blue-sky/nord.rasi ~/.config/rofi/themes
 
 echo "INSTALANDO SLIM"
 sleep 5
@@ -55,13 +40,9 @@ cd $HOME/Descargas/entorno/blue-sky/slim
 sudo cp slim.conf /etc/
 sudo cp slimlock.conf /etc
 sudo cp -r default /usr/share/slim/themes
-  #Cambiando la imagen del panel de bloqueo
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/panel.png /usr/share/slim/themes/default
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/background.png /usr/share/slim/themes/default
-sudo chmod 644 /usr/share/slim/themes/default/panel.png
 #Reiniciamos el sistema y una vez arrancado, incorporamos en el archivo 'bspwmrc' la siguiente línea para arreglar el cursor:
 	#Descomentar en caso de no tener la linea en el archivo $HOME/.config/bspwm/bspwmrc
-#echo "xsetroot -cursor_name left_ptr &" >> $HOME/.config/bspwm/bspwmrc
+echo "xsetroot -cursor_name left_ptr &" >> $HOME/.config/bspwm/bspwmrc
 
 echo "INSTALANDO POWERLVL10K"
 sleep 6
@@ -90,7 +71,7 @@ zsh
 	#2 Quiet
 	#y
 
-cp $HOME/Descargas/entorno/archivosConfiguracion/p10k/.p10k.zsh $HOME/
+
 echo "CONFIGURANDO ZSH DEBE HACERLO MANUAL ROOT"
 echo "sudo su "
 sleep 5
@@ -114,24 +95,6 @@ echo "INSTALANDO LSD"
 sleep 3
 #Instalacion de lsd
 sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/lsd_0.20.1_amd64.deb
-
-echo "AGREGANDO MIS SCRIPTS A .ZSHRC"
-sleep 5
-#Agregando mis scripts en .zshrc
-
-	#Descomentar en caso de no tenerlos
-#cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/victima >> $HOME/.zshrc
-#cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/clearv >> $HOME/.zshrc
-#cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/mkdirt >> $HOME/.zshrc
-#cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/exp >> $HOME/.zshrc
-cp -r $HOME/Descargas/entorno/archivosConfiguracion/misScripts/Ports /opt
-
-echo "ENLAZANDO ARCHIVOS .ZSHRC Y CONFIG DE BASH A .ZSH"
-sleep 3
-cp $HOME/Descargas/entorno/archivosConfiguracion/.zshrc $HOME/
-	#Enlazando archivos 
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /root/
-sudo  ln -s -f $HOME/.zshrc /root/.zshrc
 
 	#Configurando para que corra por zsh y no con bash
 sudo usermod --shell /usr/bin/zsh $(whoami)
@@ -171,12 +134,12 @@ rm init.vim
 wget https://raw.githubusercontent.com/Necros1s/lotus/master/lotus.vim
 wget https://raw.githubusercontent.com/Necros1s/lotus/master/lotusbar.vim
 cp $HOME/Descargas/entorno/archivosConfiguracion/misScripts/init.vim .
-#(Quitamos las líneas del plug)
+#wget https://raw.githubusercontent.com/Necros1s/lotus/master/init.vim #(Quitamos las líneas del plug)
 
-#Configurando entorno nanorc
+	#Configurando entorno nanorc
 wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh
-	#NOTA: configurar usuario de la linea 231
 sudo cp $HOME/Descargas/entorno/archivosConfiguracion/misScripts/nanorc /etc/
+	#NOTA: configurar usuario de la linea 231
 echo "CONFIGURAR NANORC PARA ROOT MANUALMENTE"
 echo "sudo su"
 echo "wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh"
