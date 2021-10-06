@@ -110,8 +110,8 @@ cd $HOME/Descargas/entorno/blue-sky/slim
 sudo cp slim.conf /etc/
 sudo cp slimlock.conf /etc
 sudo cp -r default /usr/share/slim/themes
-cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/panel.png /usr/share/slim/themes/default
-cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/background.png /usr/share/slim/themes/default
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/panel.png /usr/share/slim/themes/default
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/background.png /usr/share/slim/themes/default
 
 #Reiniciamos el sistema y una vez arrancado, incorporamos en el archivo 'bspwmrc' la siguiente línea para arreglar el cursor:
 	#Descomentar en caso de no tener la linea en el archivo $HOME/.config/bspwm/bspwmrc
