@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cp archivos/.zshrc $HOME/Descargas/entorno/archivosConfiguracion/
 echo "INSTALANDO FIREJAIL"
 sleep 5
 #Instalamos firejail para tener un firefox enjaulado y protegido
