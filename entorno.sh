@@ -308,9 +308,9 @@ cp $HOME/Descargas/entorno/archivosConfiguracion/misScripts/init.vim .
 #(Quitamos las líneas del plug)
 
 #Configurando entorno nanorc
-sudo cp /home/erickbuster/Documentos/entornoTrabajo/archivos/misScripts/nanorc /etc/nanorc
+sudo wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh
 	#NOTA: configurar usuario de la linea 231
-wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/misScripts/nanorc /etc/
 echo "CONFIGURAR NANORC PARA ROOT MANUALMENTE"
 echo "sudo su"
 echo "wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh"
