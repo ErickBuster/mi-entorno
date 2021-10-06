@@ -29,28 +29,28 @@ cd ../sxhkd/
 make
 sudo make install
 sudo apt install bspwm
+	#Pengando configuracion para bspwm y sxhdk
+mkdir ~/.config/bspwm
+mkdir ~/.config/sxhkd
+cd $HOME/Descargas/entorno/bspwm/
+cp examples/bspwmrc ~/.config/bspwm/
+chmod +x ~/.config/bspwm/bspwmrc 
+cp examples/sxhkdrc ~/.config/sxhkd/
 
-#Cargando archivos de configuracion bspwm y sxhdk
-	#creando directorios
-mkdir $HOME/.config/bspwm
-mkdir $HOME/.config/bspwm/scripts
-mkdir $HOME/.config/sxhkd
-	#copiando archivos en sus respectivas carpetas
-cp $HOME/Descargas/entorno/archivosConfiguracion/bspwn/bspwmrc $HOME/.config/bspwm
+mkdir ~/.config/bspwm/scripts/
 cp -r $HOME/Descargas/entorno/archivosConfiguracion/bspwn/scripts $HOME/.config/bspwm/
-cp    $HOME/Descargas/entorno/archivosConfiguracion/sxhdk/sxhkdrc $HOME/.config/sxhkd
-	#agregando permisos
-chmod +x $HOME/.config/bspwm/bspwmrc
 chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
-chmod +x $HOME/.config/sxhkd/sxhkdrc
-	#NOTA: recordar modificar usuario en el archivo sxhdk por tu usuario en la linea 124
-	#NOTA2: recorda modificar usuario en el archivo bspwmrc por tu usuario en la linea 20
+
 echo "INSTALANDO POLYBAR"
 sleep 5
 
 #Instalacion de la Polibar
 	#instalacion de paquetes
+sudo apt update
 sudo apt install cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+sudo apt update
+sudo apt install cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+
 cd $HOME/Descargas/entorno
 git clone --recursive https://github.com/polybar/polybar
 cd polybar/
@@ -83,4 +83,5 @@ sleep 5
 #Instalacion de Rofi
 sudo apt install rofi -y
 	#NOTA: En este punto podemos reiniciar la maquina, pero lo haremos al finalizar la instalacion
+echo "TERMINADO INICIAR CON BSPWM"
 reboot
