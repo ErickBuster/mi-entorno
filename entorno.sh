@@ -236,7 +236,7 @@ sleep 5
 echo "INSTALANDO BATCAT"
 sleep 4
 #Instalacion de Batcat
-sudo apt install batcat -y
+#sudo apt install batcat -y
 sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/bat_0.18.2_amd64.deb
 
 echo "INSTALANDO LSD"
