@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cp archivos/.zshrc $HOME/Descargas/entorno/archivosConfiguracion/
 echo "INSTALANDO FIREJAIL"
 sleep 5
 #Instalamos firejail para tener un firefox enjaulado y protegido
@@ -154,12 +155,12 @@ echo "INSTALANDO BATCAT"
 sleep 4
 #Instalacion de Batcat
 #sudo apt install batcat -y
-dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/bat_0.18.2_amd64.deb
+sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/bat_0.18.2_amd64.deb
 
 echo "INSTALANDO LSD"
 sleep 3
 #Instalacion de lsd
-dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/lsd_0.20.1_amd64.deb
+sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/lsd_0.20.1_amd64.deb
 
 echo "AGREGANDO MIS SCRIPTS A .ZSHRC"
 sleep 5
@@ -182,7 +183,7 @@ echo "ENLAZANDO ARCHIVOS .ZSHRC Y CONFIG DE BASH A .ZSH"
 sleep 3
 cp $HOME/Descargas/entorno/archivosConfiguracion/.zshrc $HOME/
 	#Enlazando archivos 
-cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /root/
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /root/
 sudo  ln -s -f $HOME/.zshrc /root/.zshrc
 
 	#Configurando para que corra por zsh y no con bash
