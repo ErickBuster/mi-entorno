@@ -45,7 +45,8 @@ sleep 5
 sudo apt install feh -y
 mkdir $HOME/Desktop/Images
 cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/fondo.jpg $HOME/Desktop/Images/
-cd $HOME/Desktop/Images
+echo "feh --bg-fill /home/erickbuster/Desktop/Images/fondo.jpg" >> ~/.config/bspwm/bspwmrc
+	#Modificar la ruta donde se encuentre tu imagen de fondo
 	#En caso de no cargar el fondo configurar la ruta del fondo en el archivo ~./config/bspwm/bspwmrc linea 20
 echo "REINICIANDO"
 sleep 3
