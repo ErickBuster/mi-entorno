@@ -1,16 +1,22 @@
 #!/bin/bash
 
 #actualizacion e instalacion de paquetes
+echo "ACTUALIZANDO"
+sleep 1
 sudo apt update
 sudo parrot-upgrade
 sudo apt install build-essential git vim xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev
-
+clear
+echo "CREANDO CARPETAS"
 #creando carpeta y copiando archivos necesarios
 mkdir $HOME/Descargas/entorno
 mkdir $HOME/Descargas/entorno/archivosConfiguracion
 cp -r archivos/* $HOME/Descargas/entorno/archivosConfiguracion
 cd $HOME/Descargas/entorno
+sleep 1
+clear
 
+echo "BSPWN Y SXHDK"
 #clonando bspwn y sxhdk
 git clone https://github.com/baskerville/bspwm.git
 git clone https://github.com/baskerville/sxhkd.git
@@ -38,6 +44,8 @@ chmod +x $HOME/.config/bspwm/bspwmrc
 chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
 chmod +x $HOME/.config/sxhkd/bspwmrc
 	#NOTA: recordar modificar usuario en el archivo sxhdk por tu usuario en la linea 124
+echo "INSTALANDO POLYBAR"
+sleep 5
 
 #Instalacion de la Polibar
 	#instalacion de paquetes
@@ -50,6 +58,10 @@ cd build/
 cmake ..
 make -j $(nproc)
 sudo make install
+
+
+echo "INSTALANDO PICOM"
+sleep5
 
 #instalación de Picom para ajustar las transparencias (Compton ya está deprecated).
 	#instalando paquetes y actualizando
@@ -65,10 +77,14 @@ meson --buildtype=release . build
 ninja -C build
 sudo ninja -C build install
 
+echo "INSTALANDO ROFI
+sleep 5
 #Instalacion de Rofi
-sudo apt rofi
+sudo apt install rofi
 	#NOTA: En este punto podemos reiniciar la maquina, pero lo haremos al finalizar la instalacion
 
+echo "INSTALANDO FIREJAL"
+sleep 5
 #Instalamos firejail para tener un firefox enjaulado y protegido
 sudo apt install firejail
 	#NOTA: instalamos el Firefox mas reciente y lo descargamos en /opt y lo descomprimimos tar -xf <firefox.tar>
@@ -85,6 +101,8 @@ sudo apt install firejail
 		#Mostrar la barra de menus en los terminales
 		#Campana del terminal
 
+echo "DESCARGANDO HACK NERD FONTS"
+sleep 5
 #Instalando Hack Nerd Fonts para la terminal
 cp $HOME/Descargas/entorno/archivosConfiguracion/Fonts/Hack.zip /usr/local/share/fonts
 unzip /usr/local/share/fonts/Hack.zip
@@ -93,6 +111,8 @@ rm /usr/local/share/fonts/Hack.zip
 
 #instalamos Foxy Proxy Manualmente
 
+echo "INTALANDO FEH"
+sleep 5
 #Instalacion de feh para cargar fondos de pantalla
 sudo apt install feh -y
 mkdir $HOME/Desktop/Images
@@ -100,6 +120,9 @@ cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/fondo.jpg $HOME/Desktop/I
 cd $HOME/Desktop/Images
 	#En caso de no cargar el fondo configurar la ruta del fondo en el archivo ~./config/bspwn/bspwnrc
 
+
+echo "INSTALANDO POLYBAR"
+sleep 5
 #instalacion de la Polybar
 cd $HOME/Descargas/entorno
 git clone https://github.com/VaughnValle/blue-sky.git
@@ -114,6 +137,9 @@ sudo cp * /usr/share/fonts/truetype/
 fc-cache -v
 	#Presionamos Win + Shift + R para ver la Polybar
 
+
+echo "CONFIGURANDO POLYBAR"
+sleep 5
 #Configurando las barras de la Polybar y anadiendo mis scripts personalizados
 sudo cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/current.ini $HOME/.config/polybar
 sudo cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/launch.sh $HOME/.config/polybar
@@ -129,6 +155,8 @@ chmod +x $HOME/.config/bin/ethernet_status.sh
 chmod +x $HOME/.config/bin/hackthebox_status.sh
 chmod +x $HOME/.config/bin/victim_status.sh
 
+echo "CONFIGURANDO TRANSPARENCIA PICOM
+sleep 5
 #Instalando la transparencia
 mkdir $HOME/.config/picom
 cp $HOME/Descargas/entorno/archivosConfiguracion/picom/* $HOME/.config/picom
@@ -142,35 +170,44 @@ cp $HOME/Descargas/entorno/archivosConfiguracion/picom/* $HOME/.config/picom
 #echo 'picom --experimental-backends &' >> $HOME/.config/bspwm/bspwmrc
 #echo 'bspc config border_width 0' >> $HOME/.config/bspwm/bspwmrc
 
+echo "CONFIGURANDO ROFI"
+sleep 5
 #Configuracion del rofi
 mkdir -r $HOME/Descargas/entorno/archivosConfiguracion/rofi $HOME/.config/
 
+
+echo "INSTALANDO SLIM"
+sleep 5
 #Instalacion del Slim y Slimlock
 sudo apt update
 sudo apt install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
 sudo apt install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
 cd $HOME/Descargas/entorno
-git clone https://github.com/joelburget/slimlock.git
+sudo git clone https://github.com/joelburget/slimlock.git
 cd slimlock/
 sudo make
 sudo make install
 	#Copiamos archivos de configuracion
-cd ~/Descargas/blue-sky/slim
+cd $HOME/Descargas/blue-sky/slim
 sudo cp slim.conf /etc/
 sudo cp slimlock.conf /etc
 sudo cp -r default /usr/share/slim/themes
-cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/panel.png /usr/share/slim/themes/default
-cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/background.png /usr/share/slim/themes/default
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/panel.png /usr/share/slim/themes/default
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/background.png /usr/share/slim/themes/default
 
 #Reiniciamos el sistema y una vez arrancado, incorporamos en el archivo 'bspwmrc' la siguiente línea para arreglar el cursor:
 	#Descomentar en caso de no tener la linea en el archivo $HOME/.config/bspwm/bspwmrc
 #echo "xsetroot -cursor_name left_ptr &" >> $HOME/.config/bspwm/bspwmrc
 
+echo "INSTALANDO POWERLVL10K"
+sleep 6
 #Instalacion del powerlevel10K (zsh)
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 #configurando la terminal zsh
 	#User
+echo "CONFIGURANDO ZSH USER"
+sleep 5
 zsh
 	#Opciones personales:
 	#y - y - y - y
@@ -190,11 +227,14 @@ zsh
 	#y
 
 cp $HOME/Descargas/entorno/archivosConfiguracion/p10k/.p10k.zsh $HOME/
+echo "CONFIGURANDO ZSH DEBE HACERLO MANUAL ROOT: sudo su -> zsh"
+sleep 5
 	#Root
-sudo su
-zsh
-exit
+#sudo su
+#zsh
 
+echo "ENLAZANDO ARCHIVOS .ZSHRC Y CONFIG DE BASH A .ZSH"
+sleep 3
 #Enlazando archivos 
 sudo cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /home/root/
 sudo  ln -s -f $HOME/.zshrc /root/.zshrc
@@ -208,13 +248,19 @@ sudo chown s4vitar:s4vitar /root
 sudo chown s4vitar:s4vitar /root/.cache -R
 sudo chown s4vitar:s4vitar /root/.local -R
 
+echo "INSTALANDO BATCAT"
+sleep 4
 #Instalacion de Batcat
 sudo apt install batcat -y
 sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/bat_0.18.2_amd64.deb
 
+echo "INSTALANDO LSD"
+sleep 3
 #Instalacion de lsd
 sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/lsd_0.20.1_amd64.deb
 
+echo "AGREGANDO MIS SCRIPTS A .ZSHRC"
+sleep 5
 #Agregando mis scripts en .zshrc
 	#Descomentar en caso de no tenerlos
 #cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/victima >> $HOME/.zshrc
@@ -223,20 +269,28 @@ sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/lsd_0.20.1_amd64.deb
 #cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/exp >> $HOME/.zshrc
 cp -r $HOME/Descargas/entorno/archivosConfiguracion/misScripts/Ports /opt
 
+echo "INSTALANDO FZF"
+sleep 4
 #Instalacion de fzf para buscador inteligente
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 #Opciones: y -y -y
-sudo su
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-exit
 
+echo "INSTALAR FZF PARA ROOT MANUALMENTE"
+echo "sudo su"
+echo "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
+echo "~/.fzf/install"
+sleep 5
+
+echo "INSTALANDO RANGER"
+sleep 3
 #Instalacion de Ranger
 sudo apt install ranger -y
 	#ejecutar ranger
 	#ranger
 
+echo "INSTALANDO NVIM y NANORC"
+sleep 4
 #Instalacion nvim
 cd $HOME/.config/nvim/
 wget https://github.com/arcticicestudio/nord-vim/archive/master.zip
@@ -255,8 +309,8 @@ cp $HOME/Descargas/entorno/archivosConfiguracion/misScripts/init.vim .
 sudo cp /home/erickbuster/Documentos/entornoTrabajo/archivos/misScripts/nanorc /etc/nanorc
 	#NOTA: configurar usuario de la linea 231
 wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh
-sudo su
-wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh
-exit
+echo "CONFIGURAR NANORC PARA ROOT MANUALMENTE"
+echo "sudo su"
+echo "wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh"
 
 echo "FINALIZADO!!!!..."
