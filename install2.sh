@@ -172,10 +172,10 @@ sudo chown $(whoami):$(whoami) /root/.local -R
 echo "Permisos Agregados"
 sleep 3
 	#Descomentar en caso de no tenerlos
-cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/victima >> $HOME/.zshrc
-cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/clearv >> $HOME/.zshrc
-cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/mkdirt >> $HOME/.zshrc
-cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/exp >> $HOME/.zshrc
+#cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/victima >> $HOME/.zshrc
+#cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/clearv >> $HOME/.zshrc
+#cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/mkdirt >> $HOME/.zshrc
+#cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/exp >> $HOME/.zshrc
 cp -r $HOME/Descargas/entorno/archivosConfiguracion/misScripts/Ports /opt
 
 echo "ENLAZANDO ARCHIVOS .ZSHRC Y CONFIG DE BASH A .ZSH"
