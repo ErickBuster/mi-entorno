@@ -21,9 +21,9 @@ sudo apt install firejail -y
 echo "DESCARGANDO HACK NERD FONTS"
 sleep 5
 #Instalando Hack Nerd Fonts para la terminal
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/Fonts/Hack.zip /usr/local/share/fonts
-sudo unzip /usr/local/share/fonts/Hack.zip
-sudo rm /usr/local/share/fonts/Hack.zip
+cp $HOME/Descargas/entorno/archivosConfiguracion/Fonts/Hack.zip /usr/local/share/fonts
+unzip /usr/local/share/fonts/Hack.zip
+rm /usr/local/share/fonts/Hack.zip
 	#Entrar a la configuracion de la terminal y el Tipografia elegir Hack Nerd Font Mono Regular
 
 #instalamos Foxy Proxy Manualmente
@@ -58,11 +58,11 @@ fc-cache -v
 echo "CONFIGURANDO POLYBAR"
 sleep 5
 #Configurando las barras de la Polybar y anadiendo mis scripts personalizados
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/current.ini $HOME/.config/polybar
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/launch.sh $HOME/.config/polybar
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/workspace.ini $HOME/.config/polybar
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/scripts/powermenu_alt $HOME/.config/polybar/scripts
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/scripts/themes/powermenu_alt.rasi $HOME/.config/polybar/scripts/themes
+cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/current.ini $HOME/.config/polybar
+cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/launch.sh $HOME/.config/polybar
+cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/workspace.ini $HOME/.config/polybar
+cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/scripts/powermenu_alt $HOME/.config/polybar/scripts
+cp $HOME/Descargas/entorno/archivosConfiguracion/polybar/scripts/themes/powermenu_alt.rasi $HOME/.config/polybar/scripts/themes
 
 chmod +x $HOME/.config/polybar/launch.sh
 chmod +x $HOME/.config/polybar/scripts/powermenu_alt
@@ -76,7 +76,7 @@ echo "CONFIGURANDO TRANSPARENCIA PICOM"
 sleep 5
 #Instalando la transparencia
 mkdir $HOME/.config/picom
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/picom/* $HOME/.config/picom
+cp $HOME/Descargas/entorno/archivosConfiguracion/picom/* $HOME/.config/picom
 
 #Configuracion de bordeados y seguimiendo del raton
 	#Descomentar si el archivo $HOME/.config/bspwm/bspwmrc no contiene el codigo siguiente
@@ -90,7 +90,7 @@ sudo cp $HOME/Descargas/entorno/archivosConfiguracion/picom/* $HOME/.config/pico
 echo "CONFIGURANDO ROFI"
 sleep 5
 #Configuracion del rofi
-sudo cp -r $HOME/Descargas/entorno/archivosConfiguracion/rofi $HOME/.config/
+cp -r $HOME/Descargas/entorno/archivosConfiguracion/rofi $HOME/.config/
 
 
 echo "INSTALANDO SLIM"
@@ -100,17 +100,17 @@ sudo apt update
 sudo apt install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
 sudo apt install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
 cd $HOME/Descargas/entorno
-sudo git clone https://github.com/joelburget/slimlock.git
+git clone https://github.com/joelburget/slimlock.git
 cd slimlock/
 sudo make
 sudo make install
 	#Copiamos archivos de configuracion
 cd $HOME/Descargas/entorno/blue-sky/slim
-sudo cp slim.conf /etc/
-sudo cp slimlock.conf /etc
-sudo cp -r default /usr/share/slim/themes
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/panel.png /usr/share/slim/themes/default
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/background.png /usr/share/slim/themes/default
+cp slim.conf /etc/
+cp slimlock.conf /etc
+cp -r default /usr/share/slim/themes
+cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/panel.png /usr/share/slim/themes/default
+cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/background.png /usr/share/slim/themes/default
 
 #Reiniciamos el sistema y una vez arrancado, incorporamos en el archivo 'bspwmrc' la siguiente línea para arreglar el cursor:
 	#Descomentar en caso de no tener la linea en el archivo $HOME/.config/bspwm/bspwmrc
@@ -154,12 +154,12 @@ echo "INSTALANDO BATCAT"
 sleep 4
 #Instalacion de Batcat
 #sudo apt install batcat -y
-sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/bat_0.18.2_amd64.deb
+dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/bat_0.18.2_amd64.deb
 
 echo "INSTALANDO LSD"
 sleep 3
 #Instalacion de lsd
-sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/lsd_0.20.1_amd64.deb
+dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/lsd_0.20.1_amd64.deb
 
 echo "AGREGANDO MIS SCRIPTS A .ZSHRC"
 sleep 5
@@ -181,7 +181,7 @@ cp -r $HOME/Descargas/entorno/archivosConfiguracion/misScripts/Ports /opt
 echo "ENLAZANDO ARCHIVOS .ZSHRC Y CONFIG DE BASH A .ZSH"
 sleep 3
 	#Enlazando archivos 
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /root/
+cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /root/
 sudo  ln -s -f $HOME/.zshrc /root/.zshrc
 
 	#Configurando para que corra por zsh y no con bash
@@ -225,7 +225,7 @@ cp $HOME/Descargas/entorno/archivosConfiguracion/misScripts/init.vim .
 #(Quitamos las líneas del plug)
 
 #Configurando entorno nanorc
-sudo wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh
+wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh
 	#NOTA: configurar usuario de la linea 231
 sudo cp $HOME/Descargas/entorno/archivosConfiguracion/misScripts/nanorc /etc/
 echo "CONFIGURAR NANORC PARA ROOT MANUALMENTE"
