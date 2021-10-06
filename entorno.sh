@@ -38,11 +38,11 @@ mkdir $HOME/.config/sxhkd
 	#copiando archivos en sus respectivas carpetas
 sudo cp $HOME/Descargas/entorno/archivosConfiguracion/bspwn/bspwmrc $HOME/.config/bspwm
 sudo cp -r $HOME/Descargas/entorno/archivosConfiguracion/bspwn/scripts $HOME/.config/bspwm/
-sudo cp    $HOME/Descargas/entorno/archivosConfiguracion/sxhdk/sxhdkrc $HOME/.config/sxhkd
+sudo cp    $HOME/Descargas/entorno/archivosConfiguracion/sxhdk/sxhkdrc $HOME/.config/sxhkd
 	#agregando permisos
-chmod +x $HOME/.config/bspwm/bspwmrc
-chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
-chmod +x $HOME/.config/sxhkd/sxhdkrc
+sudo chmod +x $HOME/.config/bspwm/bspwmrc
+sudo chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
+sudo chmod +x $HOME/.config/sxhkd/sxhkdrc
 	#NOTA: recordar modificar usuario en el archivo sxhdk por tu usuario en la linea 124
 echo "INSTALANDO POLYBAR"
 sleep 5
