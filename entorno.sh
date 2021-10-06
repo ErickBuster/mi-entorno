@@ -36,13 +36,13 @@ mkdir $HOME/.config/bspwm
 mkdir $HOME/.config/bspwm/scripts
 mkdir $HOME/.config/sxhkd
 	#copiando archivos en sus respectivas carpetas
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/bspwn/bspwmrc $HOME/.config/bspwm
-sudo cp -r $HOME/Descargas/entorno/archivosConfiguracion/bspwn/scripts $HOME/.config/bspwm/
-sudo cp    $HOME/Descargas/entorno/archivosConfiguracion/sxhdk/sxhkdrc $HOME/.config/sxhkd
+cp $HOME/Descargas/entorno/archivosConfiguracion/bspwn/bspwmrc $HOME/.config/bspwm
+cp -r $HOME/Descargas/entorno/archivosConfiguracion/bspwn/scripts $HOME/.config/bspwm/
+cp    $HOME/Descargas/entorno/archivosConfiguracion/sxhdk/sxhkdrc $HOME/.config/sxhkd
 	#agregando permisos
-sudo chmod +x $HOME/.config/bspwm/bspwmrc
-sudo chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
-sudo chmod +x $HOME/.config/sxhkd/sxhkdrc
+chmod +x $HOME/.config/bspwm/bspwmrc
+chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
+chmod +x $HOME/.config/sxhkd/sxhkdrc
 	#NOTA: recordar modificar usuario en el archivo sxhdk por tu usuario en la linea 124
 echo "INSTALANDO POLYBAR"
 sleep 5
@@ -82,4 +82,4 @@ sleep 5
 #Instalacion de Rofi
 sudo apt install rofi -y
 	#NOTA: En este punto podemos reiniciar la maquina, pero lo haremos al finalizar la instalacion
-sudo reboot
+reboot
