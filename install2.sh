@@ -106,9 +106,9 @@ sudo make
 sudo make install
 	#Copiamos archivos de configuracion
 cd $HOME/Descargas/entorno/blue-sky/slim
-cp slim.conf /etc/
-cp slimlock.conf /etc
-cp -r default /usr/share/slim/themes
+sudo cp slim.conf /etc/
+sudo cp slimlock.conf /etc
+sudo cp -r default /usr/share/slim/themes
 cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/panel.png /usr/share/slim/themes/default
 cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/background.png /usr/share/slim/themes/default
 
