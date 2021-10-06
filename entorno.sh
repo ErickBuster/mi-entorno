@@ -44,6 +44,7 @@ chmod +x $HOME/.config/bspwm/bspwmrc
 chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
 chmod +x $HOME/.config/sxhkd/sxhkdrc
 	#NOTA: recordar modificar usuario en el archivo sxhdk por tu usuario en la linea 124
+	#NOTA2: recorda modificar usuario en el archivo bspwmrc por tu usuario en la linea 20
 echo "INSTALANDO POLYBAR"
 sleep 5
 
