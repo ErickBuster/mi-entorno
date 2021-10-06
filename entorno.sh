@@ -82,3 +82,4 @@ sleep 5
 #Instalacion de Rofi
 sudo apt install rofi -y
 	#NOTA: En este punto podemos reiniciar la maquina, pero lo haremos al finalizar la instalacion
+sudo reboot
