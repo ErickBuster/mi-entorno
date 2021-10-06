@@ -104,9 +104,9 @@ sudo apt install firejail -y
 echo "DESCARGANDO HACK NERD FONTS"
 sleep 5
 #Instalando Hack Nerd Fonts para la terminal
-cp $HOME/Descargas/entorno/archivosConfiguracion/Fonts/Hack.zip /usr/local/share/fonts
-unzip /usr/local/share/fonts/Hack.zip
-rm /usr/local/share/fonts/Hack.zip
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/Fonts/Hack.zip /usr/local/share/fonts
+sudo unzip /usr/local/share/fonts/Hack.zip
+sudo rm /usr/local/share/fonts/Hack.zip
 	#Entrar a la configuracion de la terminal y el Tipografia elegir Hack Nerd Font Mono Regular
 
 #instalamos Foxy Proxy Manualmente
@@ -173,7 +173,7 @@ sudo cp $HOME/Descargas/entorno/archivosConfiguracion/picom/* $HOME/.config/pico
 echo "CONFIGURANDO ROFI"
 sleep 5
 #Configuracion del rofi
-mkdir -r $HOME/Descargas/entorno/archivosConfiguracion/rofi $HOME/.config/
+sudo mkdir -r $HOME/Descargas/entorno/archivosConfiguracion/rofi $HOME/.config/
 
 
 echo "INSTALANDO SLIM"
@@ -188,7 +188,7 @@ cd slimlock/
 sudo make
 sudo make install
 	#Copiamos archivos de configuracion
-cd $HOME/Descargas/blue-sky/slim
+cd $HOME/Descargas/entorno/blue-sky/slim
 sudo cp slim.conf /etc/
 sudo cp slimlock.conf /etc
 sudo cp -r default /usr/share/slim/themes
@@ -252,7 +252,8 @@ sudo chown $(whoami):$(whoami) /root
 sudo chown $(whoami):$(whoami) /opt
 sudo chown $(whoami):$(whoami) /root/.cache -R
 sudo chown $(whoami):$(whoami) /root/.local -R
-
+echo "Permisos Agregados"
+sleep 3
 	#Descomentar en caso de no tenerlos
 cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/victima >> $HOME/.zshrc
 cat $HOME/Descargas/entorno/archivosConfiguracion/misScripts/clearv >> $HOME/.zshrc
@@ -263,12 +264,12 @@ cp -r $HOME/Descargas/entorno/archivosConfiguracion/misScripts/Ports /opt
 echo "ENLAZANDO ARCHIVOS .ZSHRC Y CONFIG DE BASH A .ZSH"
 sleep 3
 	#Enlazando archivos 
-sudo cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /home/root/
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /root/
 sudo  ln -s -f $HOME/.zshrc /root/.zshrc
 
 	#Configurando para que corra por zsh y no con bash
-usermod --shell /usr/bin/zsh $(whoami)
-usermod --shell /usr/bin/zsh root
+sudo usermod --shell /usr/bin/zsh $(whoami)
+sudo usermod --shell /usr/bin/zsh root
 
 echo "INSTALANDO FZF"
 sleep 4
