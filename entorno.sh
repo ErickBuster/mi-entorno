@@ -173,7 +173,7 @@ sudo cp $HOME/Descargas/entorno/archivosConfiguracion/picom/* $HOME/.config/pico
 echo "CONFIGURANDO ROFI"
 sleep 5
 #Configuracion del rofi
-sudo mkdir -r $HOME/Descargas/entorno/archivosConfiguracion/rofi $HOME/.config/
+sudo cp -r $HOME/Descargas/entorno/archivosConfiguracion/rofi $HOME/.config/
 
 
 echo "INSTALANDO SLIM"
