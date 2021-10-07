@@ -39,6 +39,7 @@ cp examples/sxhkdrc ~/.config/sxhkd/
 
 mkdir ~/.config/bspwm/scripts/
 cp -r $HOME/Descargas/entorno/archivosConfiguracion/bspwn/scripts $HOME/.config/bspwm/
+cp    $HOME/Descargas/entorno/archivosConfiguracion/sxhdk/sxhkdrc $HOME/.config/sxhkd
 chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
 
 echo "INSTALANDO POLYBAR"
@@ -85,4 +86,5 @@ sleep 5
 sudo apt install rofi -y
 	#NOTA: En este punto podemos reiniciar la maquina, pero lo haremos al finalizar la instalacion
 echo "TERMINADO INICIAR CON BSPWM"
+sleep 5
 reboot
