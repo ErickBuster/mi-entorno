@@ -146,4 +146,4 @@ echo "wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O
 
 echo "FINALIZADO!!!!..."
 sleep 5
-kill -9 -1
+reboot
