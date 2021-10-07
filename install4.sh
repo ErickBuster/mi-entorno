@@ -145,3 +145,5 @@ echo "sudo su"
 echo "wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh"
 
 echo "FINALIZADO!!!!..."
+sleep 5
+kill -9 -1
