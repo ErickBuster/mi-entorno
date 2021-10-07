@@ -7,5 +7,5 @@ chmod +x install*
 #Instalar consecutivamente todos los instaladores
 ./install1.sh
 #Se actualizara e instalara Bspwm y Sxhdk y se reiniciara la maquina
-#Iniciar 
+#Iniciar con bspwm en la pantalla de inicio de sesion
 
