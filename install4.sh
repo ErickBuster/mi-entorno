@@ -83,6 +83,10 @@ sudo chown $(whoami):$(whoami) /root
 sudo chown $(whoami):$(whoami) /root/.cache -R
 sudo chown $(whoami):$(whoami) /root/.local -R
 echo "Permisos Agregados"
+echo "CONFIGURANDO UNA ZSH PARA EL USUARIO Y PARA ROOT"
+	#Configurando para que corra por zsh y no con bash
+sudo usermod --shell /usr/bin/zsh $(whoami)
+sudo usermod --shell /usr/bin/zsh root
 sleep 3
 
 echo "INSTALANDO BATCAT"
@@ -95,10 +99,6 @@ echo "INSTALANDO LSD"
 sleep 3
 #Instalacion de lsd
 sudo dpkg -i $HOME/Descargas/entorno/archivosConfiguracion/lsd_0.20.1_amd64.deb
-
-	#Configurando para que corra por zsh y no con bash
-sudo usermod --shell /usr/bin/zsh $(whoami)
-sudo usermod --shell /usr/bin/zsh root
 
 echo "INSTALANDO FZF"
 sleep 4
