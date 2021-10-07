@@ -41,6 +41,7 @@ mkdir ~/.config/bspwm/scripts/
 cp -r $HOME/Descargas/entorno/archivosConfiguracion/bspwn/scripts $HOME/.config/bspwm/
 cp    $HOME/Descargas/entorno/archivosConfiguracion/sxhdk/sxhkdrc $HOME/.config/sxhkd
 chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
+chmod +x $HOME/.config/sxhkd/sxhkdrc
 
 echo "INSTALANDO POLYBAR"
 sleep 5
