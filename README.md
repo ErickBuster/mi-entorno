@@ -122,7 +122,7 @@ Instalara y sustituira scripts y herramientas personalizadas para:
 ```
 sudo find / -type f 2>/dev/null | xargs grep "erickbuster" 2>/dev/null
 ```
-Mostrara todos los archivos con el usuario, modificar cada uno por tu usuario! usando sed
+Mostrara todos los archivos con el usuario, modificar cada uno por tu usuario! usando sed 
 ```
 sed -i 's/erickbuster/<tu Usuario>/g' <archivo a modificar>
 ```
