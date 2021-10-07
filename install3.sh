@@ -14,5 +14,5 @@ echo '~/.config/polybar/./launch.sh' >> $HOME/.config/bspwm/bspwmrc
 cd fonts
 sudo cp * /usr/share/fonts/truetype/
 fc-cache -v
-echo "Presionamos Win + Shift + R para ver la Polybar"
+echo "Presionamos Win + Alt + R para ver la Polybar"
 echo "Terminado"
