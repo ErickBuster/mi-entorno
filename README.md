@@ -1,5 +1,5 @@
 # miEntorno
-cd $HOME/Descargas
+cd $HOME/Descargas \n
 git clone https://github.com/ErickBuster/miEntorno
 #Agregar permisos a los instaladores
 cd miEntorno
