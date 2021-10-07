@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cp archivos/.zshrc $HOME/Descargas/entorno/archivosConfiguracion/
 echo "Cargando archivos de configuracion para bspwm y sxhdk"
 sleep 5
 	#creando directorios
@@ -52,7 +51,9 @@ sudo cp $HOME/Descargas/entorno/archivosConfiguracion/fondo/background.png /usr/
 sudo chmod 644 /usr/share/slim/themes/default/panel.png
 
 echo "CONFIGURANDO ZSH USER"
+cp archivos/.zshrc $HOME/Descargas/entorno/archivosConfiguracion/
 cp $HOME/Descargas/entorno/archivosConfiguracion/p10k/.p10k.zsh $HOME/
+sudo cp $HOME/Descargas/entorno/archivosConfiguracion/p10kRoot/.p10k.zsh /root/
 
 echo "AGREGANDO MIS SCRIPTS A .ZSHRC"
 sleep 5
