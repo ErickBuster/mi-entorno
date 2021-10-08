@@ -135,3 +135,7 @@ sed -i 's/erickbuster/<tu Usuario>/g' $HOME/.config/rofi/config
 sed -i 's/erickbuster/<tu Usuario>/g' #HOME/.config/bin/victim_status.sh
 sudo sed -i 's/erickbuster/<tu Usuario>/g' /etc/nanorc
 ```
+donde <tu Usuario> lo consultas con:
+  ```
+  whoami
+  ```
