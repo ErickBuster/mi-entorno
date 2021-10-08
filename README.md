@@ -128,6 +128,7 @@ sed -i 's/erickbuster/<tu Usuario>/g' <archivo a modificar>
 ```
 algunos archivos a editar son:
 ```
+sed -i 's/erickbuster/<tu Usuario>/g' $HOME/.zshrc
 sed -i 's/erickbuster/<tu Usuario>/g' $HOME/.config/bspwm/bspwmrc
 sed -i 's/erickbuster/<tu Usuario>/g' $HOME/.config/sxhdk/sxhdkrc
 sed -i 's/erickbuster/<tu Usuario>/g' $HOME/.config/rofi/config
