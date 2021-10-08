@@ -126,3 +126,11 @@ Mostrara todos los archivos con el usuario, modificar cada uno por tu usuario! u
 ```
 sed -i 's/erickbuster/<tu Usuario>/g' <archivo a modificar>
 ```
+algunos archivos a editar son:
+```
+sed -i 's/erickbuster/<tu Usuario>/g' $HOME/.config/bspwm/bspwmrc
+sed -i 's/erickbuster/<tu Usuario>/g' $HOME/.config/sxhdk/sxhdkrc
+sed -i 's/erickbuster/<tu Usuario>/g' $HOME/.config/rofi/config
+sed -i 's/erickbuster/<tu Usuario>/g' #HOME/.config/bin/victim_status.sh
+sudo sed -i 's/erickbuster/<tu Usuario>/g' /etc/nanorc
+```
